@@ -1,0 +1,24 @@
+{
+  "name": "lint-example",
+  "version": "1.0.0",
+  "description": "Lint example to nodeJS project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BBIT-br/lint-example.git"
+  },
+  "keywords": [
+    "lint",
+    "node",
+    "eslint"
+  ],
+  "author": "BBIT-br",
+  "license": "WTFPL",
+  "bugs": {
+    "url": "https://github.com/BBIT-br/lint-example/issues"
+  },
+  "homepage": "https://github.com/BBIT-br/lint-example#readme"
+}
