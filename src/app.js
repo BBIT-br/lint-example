@@ -1,12 +1,13 @@
 /* eslint-disable no-console */
-import {join} from 'path'
+import path from 'path'
 import {exec} from 'child_process';
 
 import {createFile, readFile} from './utils/file'
-// import {REACT_JS} from './stack/keys'
-import {REACT_JS_DEPS} from './stack/react'
+import {getAllDepsByKey, isValidKey} from './utils/keys';
 
-const installDeps = (targetFolder, allDeps) => {
+const installDeps = (targetFolder, stack) => {
+  const allDeps = getAllDepsByKey(stack);
+
   exec(`cd ${targetFolder} && npm install && npm install ${allDeps} --save-dev`, (error, stdout, stderr) => {
     if (error) {
       console.log(`error: ${error.message}`);
@@ -31,10 +32,13 @@ const execute = () => {
   const targetFolder = args[2];
   const stack = args[3];
 
-  installDeps(targetFolder, REACT_JS_DEPS.join(' '));
-  const contentLint = readFile(stack);
-  createFile(join(targetFolder, '.eslintrc.json'), contentLint);
+  if (isValidKey(stack)) {
+    installDeps(targetFolder, stack);
+    const lintContent = readFile(stack);
+    const fileName = path.join(targetFolder, '.eslintrc.json');
+    createFile(fileName, lintContent);
+  }
+
 }
 
 execute();
-

@@ -1,15 +1,15 @@
 import fs from 'fs';
 import path from 'path';
-import {REACT_JS, REACT_TS} from '../../stack/keys';
+import {keys} from '../keys';
 
 const getFileNameByStack = (stack) => {
-  const folderNameBase = path.join(__dirname, '..', '..', 'stack');
+  const folderNameBase = path.join(__dirname, '..', 'stack');
 
   let folderName = '';
 
-  if (stack === REACT_JS) {
+  if (stack === keys.REACT_JS) {
     folderName = path.join(folderNameBase, 'react', 'js');
-  } else if (stack === REACT_TS) {
+  } else if (stack === keys.REACT_TS) {
     folderName = path.join(folderNameBase, 'react', 'ts');
   }
 
