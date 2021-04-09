@@ -5,12 +5,12 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint src --ext .js,.jsx",
-    "cu": "index.js"
+    "start": "node src/index.js"
   },
   "author": "BBIT-br",
   "license": "WTFPL",
   "bugs": {
     "url": "https://github.com/BBIT-br/lint-example/issues"
   },
-  "homepage": "https://github.com/BBIT-br/lint-example#readme",
+  "homepage": "https://github.com/BBIT-br/lint-example#readme"
 }
