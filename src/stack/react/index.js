@@ -1,4 +1,4 @@
-export const DEPS = [
+export const REACT_JS_DEPS = [
   'eslint',
   'eslint-config-airbnb',
   'eslint-config-prettier',
