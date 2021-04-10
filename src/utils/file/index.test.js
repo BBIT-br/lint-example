@@ -1,16 +1,17 @@
 import {getFileNameByStack, readOriginalLintFile} from './index'
+import path from 'path';
 
 describe('File tests', () => {
 
   describe('getFileNameByStack', () => {
     test('REACT_JS', () => {
       const fileName = getFileNameByStack('REACT_JS');
-      expect(fileName).toContain('react\\js');
+      expect(fileName).toContain(path.join('react','js'));
     });
 
     test('REACT_TS', () => {
       const fileName = getFileNameByStack('REACT_TS');
-      expect(fileName).toContain('react\\ts');
+      expect(fileName).toContain(path.join('react','ts'));
     });
 
     test('JDK_8', () => {
