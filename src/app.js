@@ -2,7 +2,7 @@
 import path from 'path'
 import {exec} from 'child_process';
 
-import {createFile, readFile} from './utils/file'
+import {createFile, readOriginalLintFile} from './utils/file'
 import {getAllDepsByKey, isValidKey} from './utils/keys';
 
 const installDeps = (targetFolder, stack) => {
@@ -34,7 +34,7 @@ const execute = () => {
 
   if (isValidKey(stack)) {
     installDeps(targetFolder, stack);
-    const lintContent = readFile(stack);
+    const lintContent = readOriginalLintFile(stack);
     const fileName = path.join(targetFolder, '.eslintrc.json');
     createFile(fileName, lintContent);
   }
